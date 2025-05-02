@@ -1,7 +1,8 @@
 $env:PIP_REQUIRE_VIRTUALENV = "true"
 
 function pip-update-reqs {
-    pip freeze | Out-File -Encoding ASCII "$PWD\requirements.txt"
+    Start-Sleep -Seconds 1 
+    python -m pip freeze | Out-File -Encoding ASCII "$PWD\requirements.txt" -Force
 }
 
 function pip {
