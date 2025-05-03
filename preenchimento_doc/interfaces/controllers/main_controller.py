@@ -1,5 +1,6 @@
 from preenchimento_doc.interfaces.views.main_window import MainWindow
 
+
 class MainController(MainWindow):
     def __init__(self):
         super().__init__()

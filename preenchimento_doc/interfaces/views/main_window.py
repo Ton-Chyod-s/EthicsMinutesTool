@@ -1,5 +1,6 @@
 from PySide6.QtWidgets import QMainWindow, QPushButton, QLabel, QWidget, QVBoxLayout
 
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
