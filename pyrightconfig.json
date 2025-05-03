@@ -1,0 +1,8 @@
+{
+  "typeCheckingMode": "basic",
+  "exclude": ["**/__pycache__"],
+  "reportMissingImports": true,
+  "reportMissingTypeStubs": false
+}
+
+
