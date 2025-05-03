@@ -18,9 +18,9 @@ class MainWindow(QWidget):
         self.setup_ui()
 
     def setup_ui(self):
-        css_path = os.path.abspath(os.path.join(
-            os.path.dirname(__file__), "..", "assets", "style.qss"
-        ))
+        css_path = os.path.abspath(
+            os.path.join(os.path.dirname(__file__), "..", "assets", "style.qss")
+        )
 
         layout = QVBoxLayout()
 
