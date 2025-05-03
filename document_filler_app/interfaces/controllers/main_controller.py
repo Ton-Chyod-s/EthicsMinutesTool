@@ -1,4 +1,4 @@
-from preenchimento_doc.interfaces.views.main_window import MainWindow
+from document_filler_app.interfaces.views.main_window import MainWindow
 
 
 class MainController(MainWindow):

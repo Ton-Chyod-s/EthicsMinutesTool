@@ -1,6 +1,6 @@
 import sys
 from PySide6.QtWidgets import QApplication
-from preenchimento_doc.interfaces import MainController
+from document_filler_app.interfaces import MainController
 
 
 if __name__ == "__main__":
