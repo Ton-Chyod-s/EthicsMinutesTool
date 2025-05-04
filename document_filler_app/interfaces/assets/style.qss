@@ -1,7 +1,6 @@
 QWidget {
     background-color: #f0f0f0;
-    border-radius: 10px;
-    padding: 15px;
+
 }
 
 QLabel {

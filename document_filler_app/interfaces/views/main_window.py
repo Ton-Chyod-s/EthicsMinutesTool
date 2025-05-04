@@ -24,10 +24,9 @@ class MainWindow(QWidget):
 
         layout = QVBoxLayout()
 
-        # Carregar o arquivo CSS
-        if os.path.exists(css_path):
-            with open(css_path, "r") as f:
-                self.setStyleSheet(f.read())
+        # if os.path.exists(css_path):
+        #     with open(css_path, "r") as f:
+        #         self.setStyleSheet(f.read())
 
         # Tipo de documento
         tipo_layout = QHBoxLayout()
@@ -37,33 +36,51 @@ class MainWindow(QWidget):
         tipo_layout.addWidget(self.tipo_combo)
         layout.addLayout(tipo_layout)
 
-        # Nome completo
-        layout.addWidget(QLabel("Nome completo:"))
-        self.nome_input = QLineEdit()
-        layout.addWidget(self.nome_input)
+        # Nome + Data na mesma linha (colunas)
+        linha_nome_data = QHBoxLayout()
 
-        # CPF
-        layout.addWidget(QLabel("CPF:"))
-        self.cpf_input = QLineEdit()
-        layout.addWidget(self.cpf_input)
+        # Coluna do Nome
+        nome_coluna = QVBoxLayout()
+        nome_coluna.addWidget(QLabel("Nome:"))
+        self.nome_input = QLineEdit()
+        nome_coluna.addWidget(self.nome_input)
+        linha_nome_data.addLayout(nome_coluna)
+
+        # Coluna da Data
+        data_coluna = QVBoxLayout()
+        data_coluna.addWidget(QLabel("Data:"))
+        self.data_reuniao_input = QDateEdit()
+        self.data_reuniao_input.setCalendarPopup(True)
+        data_coluna.addWidget(self.data_reuniao_input)
+        linha_nome_data.addLayout(data_coluna)
+
+        # Adiciona a linha ao layout principal
+        layout.addLayout(linha_nome_data)
+
+        # Projetos
+        projeto_layout = QHBoxLayout()
+        projeto_layout.addWidget(QLabel("Projetos:"))
+        self.arquivo_btn = QPushButton("📎 Inserir ")
+        projeto_layout.addWidget(self.arquivo_btn)
+        layout.addLayout(projeto_layout)
 
         # E-mail
-        layout.addWidget(QLabel("E-mail:"))
+        email_layout = QHBoxLayout()
+        email_layout.addWidget(QLabel("E-mail:"))
         self.email_input = QLineEdit()
-        layout.addWidget(self.email_input)
+        email_layout.addWidget(self.email_input)
+        layout.addLayout(email_layout)
 
         # Data de assinatura
-        layout.addWidget(QLabel("Data de assinatura:"))
-        self.data_input = QDateEdit()
-        self.data_input.setDisplayFormat("dd/MM/yyyy")
-        self.data_input.setCalendarPopup(True)
-        layout.addWidget(self.data_input)
+        assinatura_layout = QHBoxLayout()
+        assinatura_layout.addWidget(QLabel("Data de assinatura:"))
+        self.data_assinatura_input = QDateEdit()
+        self.data_assinatura_input.setDisplayFormat("dd/MM/yyyy")
+        self.data_assinatura_input.setCalendarPopup(True)
+        assinatura_layout.addWidget(self.data_assinatura_input)
+        layout.addLayout(assinatura_layout)
 
-        # Seleção de arquivo
-        self.arquivo_btn = QPushButton("📎 Selecionar arquivo base...")
-        layout.addWidget(self.arquivo_btn)
-
-        # Botões principais
+        # Botões
         botoes_layout = QHBoxLayout()
         self.preview_btn = QPushButton("📄 Pré-visualizar")
         self.gerar_btn = QPushButton("💾 Gerar Documento")
