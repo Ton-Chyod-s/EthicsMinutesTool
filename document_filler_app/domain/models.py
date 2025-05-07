@@ -7,9 +7,8 @@ class Base(DeclarativeBase):
 
 
 class Documento(Base):
-    __tablename__ = "documentos"
+    __tablename__ = "membros_convocados"
 
     id = Column(Integer, primary_key=True, index=True)
     nome = Column(String)
     cpf = Column(String)
-    email = Column(String)
