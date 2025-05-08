@@ -24,7 +24,7 @@ class ReloadHandler(FileSystemEventHandler):
             self.restart_program()
 
 if __name__ == "__main__":
-    script_name = "main.py" 
+    script_name = "main-prod.py" 
     path = "."  
 
     event_handler = ReloadHandler(script_name)
