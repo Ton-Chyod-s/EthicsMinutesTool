@@ -36,6 +36,8 @@ class MainController(MainWindow):
             # Atualizar texto do botão com o caminho final
             self.arquivo_btn.setText(f"📎 {destino}")
 
+            
+        
     def gerar_documento(self):
         self.resultado_label.setText("✅ Documento gerado com sucesso! Salvo em: /docs/...")
         QMessageBox.information(self, "Documento", "Documento gerado com sucesso!")
